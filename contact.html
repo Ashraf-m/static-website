@@ -8,7 +8,9 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
+     
+    
     <title>My Website </title>
     <link rel="icon" href="file:///C:/Users/User/Desktop/ashraf/assets/images/front%20(2).jpg" type="image/gif" sizes="15x16">
     <!-- web fonts -->
@@ -17,6 +19,9 @@ Author URL: http://w3layouts.com
     <!-- //web fonts -->
     <!-- Template CSS -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    
   </head>
   <body>
 
@@ -71,7 +76,7 @@ Author URL: http://w3layouts.com
                <!-- contact form -->
                <div class="contacts12-main col-lg-6 ">
                    
-                <form id="gform" method="POST"  action="https://script.google.com/macros/s/AKfycbxalzAtOBQSDVQkRZjumYuz09cuTVupLNB7Vzj_/exec" class="main-input">
+                <form id="#submit-form" action="" class="main-input">
                     <div class="top-inputs d-grid">
                         <input type="text" placeholder="Name" name="w3lName" id="w3lName" required="">
                        
@@ -85,6 +90,9 @@ Author URL: http://w3layouts.com
                 </form>
             </div>
             <!-- //contact form -->
+            <!--form script-->
+  
+<!--form script-->
                 <!-- contact address -->
                 <div class="contact col-lg-6 mt-lg-0 mt-5">
                     <div class="cont-subs">
@@ -190,6 +198,27 @@ Author URL: http://w3layouts.com
 </section>
 
 <script>
+  $("submit-form").submit((e)=>{
+      e.preventDefault()
+      $.ajax({
+          url:"https://script.google.com/macros/s/AKfycbwWuXL1quJGLkqtcyll1eWxyJgCealxv34vKUx6QA/exec",
+          data:$("#submit-form").serialize(),
+          method:"post",
+          success:function (response){
+              alert("Form submitted successfully")
+              window.location.reload()
+              //window.location.href="https://google.com"
+          },
+          error:function (err){
+              alert("Something Error")
+
+          }
+      })
+  })
+</script>
+
+
+<script>
     $(function () {
       $('.navbar-toggler').click(function () {
         $('body').toggleClass('noscroll');
@@ -206,6 +235,8 @@ Author URL: http://w3layouts.com
   </script>
 
 <!-- Smooth scrolling -->
+
+
 
 
 
